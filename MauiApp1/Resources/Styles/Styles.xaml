@@ -19,6 +19,14 @@
         <Setter Property="FontSize" Value="16"/>
     </Style>
     
+    <Color x:Key="BgLight">White</Color>
+    <Color x:Key="BgDark">Black</Color>
+    
+    <Style x:Key="MyButtonStyle" TargetType="Button">
+        <Setter Property="BackgroundColor"
+                Value="{AppThemeBinding Light={StaticResource BgLight}, Dark={StaticResource BgDark}}"></Setter>
+    </Style>
+    
     <Color x:Key="LightBackground">#FAF9F8</Color>
     <Color x:Key="DarkBackground">Black</Color>
     

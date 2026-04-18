@@ -9,6 +9,11 @@
     ios:Page.UseSafeArea="True"
     Title="Monkeys"
     x:DataType="viewmodel:MonkeyViewModel">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh"></ToolbarItem>
+        </ContentPage.ToolbarItems>
+
     <Grid
         ColumnDefinitions="*,*"
         ColumnSpacing="5"
@@ -19,9 +24,9 @@
             Grid.ColumnSpan="2"
             Command="{Binding GetMonkeysCommand}"
             IsRefreshing="{Binding IsRefreshing}">
-            <CollectionView
-                        ItemsSource="{Binding Monkeys}"
-                        SelectionMode="None">
+            <CollectionView BackgroundColor="Transparent"
+                            ItemsSource="{Binding Monkeys}"
+                            SelectionMode="None">
                 <CollectionView.EmptyView>
                     <StackLayout Padding="100">
                         <Image
@@ -85,6 +90,8 @@
             Style="{StaticResource ButtonOutline}"
             Text="Find Closest" />
 
+        <!-- <Button Style="{StaticResource MyButtonStyle}" Text="ABC" /> -->
+        
 
         <ActivityIndicator
             Grid.RowSpan="2"

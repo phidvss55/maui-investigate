@@ -9,9 +9,14 @@ namespace MauiApp1;
 
 public partial class DetailPage : ContentPage
 {
-    public DetailPage(DetailViewModel detail)
+    public DetailPage(MonkeyDetailsViewModel detail)
     {
         InitializeComponent();
         BindingContext = detail;
+    }
+
+    protected override void OnNavigatedTo(NavigatedToEventArgs args)
+    {
+        base.OnNavigatedTo(args);
     }
 }

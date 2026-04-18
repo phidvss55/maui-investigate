@@ -1,12 +1,14 @@
 ﻿using System.Diagnostics;
+using MauiApp1.ViewModel;
 
 namespace MauiApp1;
 
 public partial class MainPage : ContentPage
 {
-	public MainPage()
+	public MainPage(MonkeyViewModel viewModel)
 	{
 		InitializeComponent();
+		BindingContext = viewModel;
 	}
 
 	private void OnLoginClicked(object? sender, EventArgs e)

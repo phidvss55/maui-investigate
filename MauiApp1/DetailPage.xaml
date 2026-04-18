@@ -4,16 +4,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="MauiApp1.DetailPage"
              xmlns:viewmodel="clr-namespace:MauiApp1.ViewModel"
-             x:DataType="viewmodel:DetailViewModel"
-             Title="Detail Page">
+             x:DataType="viewmodel:MonkeyDetailsViewModel"
+             Title="{Binding Monkey.Name}">
     
     <StackLayout Padding="20">
-        <Label Text="This is the detail page" 
+        <Label Text="{Binding Monkey.Name}"
+               TextColor="Black"
                FontSize="24"
                HorizontalOptions="Center"
                VerticalOptions="CenterAndExpand" />
+        
+        <Label Text="This is the button"></Label>
          
-        <Button Text="Go Back" Command="{Binding GoBackCommand}" />
+        <!-- <Button Text="Go Back" Command="{Binding GoBackCommand}" /> -->
         
     </StackLayout>
-</ContentPage>
+</ContentPage> 

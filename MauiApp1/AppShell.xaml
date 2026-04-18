@@ -6,7 +6,7 @@
     xmlns:local="clr-namespace:MauiApp1"
     Shell.FlyoutBehavior="Flyout">
 
-    <TabBar>
+    <!-- <TabBar> -->
         <ShellContent
             Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
@@ -21,5 +21,5 @@
             Title="Test Page"
             ContentTemplate="{DataTemplate local:TestPage}"
             Route="TestPage"/>
-    </TabBar>
+    <!-- </TabBar> -->
 </Shell>

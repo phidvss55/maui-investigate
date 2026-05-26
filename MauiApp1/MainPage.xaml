@@ -9,10 +9,10 @@
     ios:Page.UseSafeArea="True"
     Title="Monkeys"
     x:DataType="viewmodel:MonkeyViewModel">
-    
+
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Refresh"></ToolbarItem>
-        </ContentPage.ToolbarItems>
+        <ToolbarItem Text="Refresh"/>
+    </ContentPage.ToolbarItems>
 
     <Grid
         ColumnDefinitions="*,*"
@@ -30,11 +30,11 @@
                 <CollectionView.EmptyView>
                     <StackLayout Padding="100">
                         <Image
-                                    HorizontalOptions="Center"
-                                    HeightRequest="160"
-                                    WidthRequest="160"
-                                    Source="nodata.png"
-                                    VerticalOptions="Center" />
+                            HorizontalOptions="Center"
+                            HeightRequest="160"
+                            WidthRequest="160"
+                            Source="nodata.png"
+                            VerticalOptions="Center"/>
                     </StackLayout>
                 </CollectionView.EmptyView>
                 <!--<CollectionView.ItemsLayout>
@@ -42,26 +42,31 @@
                         </CollectionView.ItemsLayout>-->
                 <CollectionView.ItemTemplate>
                     <DataTemplate x:DataType="model:Monkey">
-                        <Grid Padding="10" HorizontalOptions="Fill">
-                            <Border HeightRequest="125" Style="{StaticResource CardView}">
+                        <Grid Padding="10"
+                              HorizontalOptions="Fill">
+                            <Border HeightRequest="125"
+                                    Style="{StaticResource CardView}">
                                 <Border.GestureRecognizers>
-                                    <TapGestureRecognizer 
-                                                Command="{Binding Source={RelativeSource 
+                                    <TapGestureRecognizer
+                                        Command="{Binding Source={RelativeSource 
                                                 AncestorType={x:Type viewmodel:MonkeyViewModel}}, x:DataType=viewmodel:MonkeyViewModel, Path=GoToDetailCommand}"
-                                                CommandParameter="{Binding .}"/>
+                                        CommandParameter="{Binding .}"/>
                                 </Border.GestureRecognizers>
-                                <Grid Padding="0" ColumnDefinitions="125,*">
+                                <Grid Padding="0"
+                                      ColumnDefinitions="125,*">
                                     <Image
-                                                Aspect="AspectFill"
-                                                HeightRequest="125"
-                                                Source="{Binding Image}"
-                                                WidthRequest="125" />
+                                        Aspect="AspectFill"
+                                        HeightRequest="125"
+                                        Source="{Binding Image}"
+                                        WidthRequest="125"/>
                                     <VerticalStackLayout
-                                                VerticalOptions="Center"
-                                                Grid.Column="1"
-                                                Padding="10">
-                                        <Label Style="{StaticResource LargeLabel}" Text="{Binding Name}" />
-                                        <Label Style="{StaticResource MediumLabel}" Text="{Binding Location}" />
+                                        VerticalOptions="Center"
+                                        Grid.Column="1"
+                                        Padding="10">
+                                        <Label Style="{StaticResource LargeLabel}"
+                                               Text="{Binding Name}"/>
+                                        <Label Style="{StaticResource MediumLabel}"
+                                               Text="{Binding Location}"/>
                                     </VerticalStackLayout>
                                 </Grid>
                             </Border>
@@ -78,7 +83,7 @@
             Command="{Binding GetMonkeysCommand}"
             IsEnabled="{Binding IsNotBusy}"
             Style="{StaticResource ButtonOutline}"
-            Text="Get Monkeys" />
+            Text="Get Monkeys"/>
 
         <!--  Add this  -->
         <Button
@@ -88,10 +93,10 @@
             Command="{Binding GetClosestMonkeyCommand}"
             IsEnabled="{Binding IsNotBusy}"
             Style="{StaticResource ButtonOutline}"
-            Text="Find Closest" />
+            Text="Find Closest"/>
 
         <!-- <Button Style="{StaticResource MyButtonStyle}" Text="ABC" /> -->
-        
+
 
         <ActivityIndicator
             Grid.RowSpan="2"
@@ -100,6 +105,6 @@
             IsRunning="{Binding IsBusy}"
             IsVisible="{Binding IsBusy}"
             Color="{StaticResource Primary}"
-            VerticalOptions="Center" />
+            VerticalOptions="Center"/>
     </Grid>
 </ContentPage>

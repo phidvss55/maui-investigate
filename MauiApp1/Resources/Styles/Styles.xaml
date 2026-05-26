@@ -33,6 +33,8 @@
     <Color x:Key="CardBackground">White</Color>
     <Color x:Key="CardBackgroundDark">#1C1C1E</Color>
     
+    <Color x:Key="TextColor">#555</Color>
+    
     <Style x:Key="ButtonOutline" TargetType="Button">
         <Setter Property="Background" Value="{AppThemeBinding Light={StaticResource LightBackground}, Dark={StaticResource DarkBackground}}" />
         <Setter Property="TextColor" Value="{StaticResource Primary}" />

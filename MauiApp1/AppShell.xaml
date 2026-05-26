@@ -4,6 +4,7 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp1"
+    xmlns:contact="clr-namespace:MauiApp1.Pages"
     Shell.FlyoutBehavior="Flyout">
 
     <!-- <TabBar> -->
@@ -11,15 +12,26 @@
             Title="Home"
             ContentTemplate="{DataTemplate local:MainPage}"
             Route="MainPage"/>
-        
+
         <ShellContent
             Title="Todo"
             ContentTemplate="{DataTemplate local:FirstPage}"
             Route="FirstPage"/>
-        
+    
+        <ShellContent
+            Title="Contact Page"
+            ContentTemplate="{DataTemplate contact:ContactPage}"
+            Route="ContactPage"/>
+
         <ShellContent
             Title="Test Page"
             ContentTemplate="{DataTemplate local:TestPage}"
             Route="TestPage"/>
+
+        <ShellContent
+            Title="Screen Page One"
+            ContentTemplate="{DataTemplate local:ScreenOne}"
+            Route="ScreenOne"/>
+    
     <!-- </TabBar> -->
 </Shell>

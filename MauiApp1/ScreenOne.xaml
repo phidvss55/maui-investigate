@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.ScreenOne"
+             BackgroundColor="#f6fafb"
+             Title="Profile">
+
+    <!-- Design System Colors from Aerostatic Editorial -->
+    <ContentPage.Resources>
+        <Color x:Key="SurfaceLowest">#ffffff</Color>
+        <Color x:Key="SurfaceContainerLow">#eff5f7</Color>
+        <Color x:Key="SurfaceContainerHighest">#dae4e7</Color>
+        <Color x:Key="PrimaryColor">#1f6877</Color>
+        <Color x:Key="PrimaryDim">#095b6a</Color>
+        <Color x:Key="OnSurface">#2b3437</Color>
+        <Color x:Key="OnSurfaceVariant">#576164</Color>
+        <Color x:Key="SecondaryContainer">#cee7ee</Color>
+        <Color x:Key="OnSecondaryContainer">#3e555c</Color>
+    </ContentPage.Resources>
+
+    <Grid RowDefinitions="Auto,*"
+          Padding="0">
+        <!-- Header Section with Profile Avatar and Info -->
+        <Grid RowDefinitions="200,Auto"
+              ColumnDefinitions="*"
+              Grid.Row="0"
+              Background="{StaticResource SurfaceContainerLow}"
+              Padding="24,0,24,24">
+
+            <!-- Profile Header Background -->
+            <Border Grid.Row="0"
+                    StrokeShape="RoundRectangle 20"
+                    Background="{StaticResource SurfaceContainerHighest}"
+                    Padding="20">
+                <Grid RowDefinitions="Auto,Auto"
+                      ColumnDefinitions="*"
+                      Padding="0">
+                    <!-- Avatar with Halo Effect -->
+                    <Grid Grid.Row="0"
+                          ColumnDefinitions="Auto,*"
+                          ColumnSpacing="16"
+                          Margin="0,0,0,16">
+                        <Border Grid.Column="0"
+                                WidthRequest="80"
+                                HeightRequest="80"
+                                StrokeShape="RoundRectangle 40"
+                                Background="{StaticResource PrimaryColor}"
+                                StrokeThickness="0">
+                            <Label Text="JD"
+                                   FontSize="32"
+                                   FontAttributes="Bold"
+                                   TextColor="#effbff"
+                                   HorizontalTextAlignment="Center"
+                                   VerticalTextAlignment="Center"/>
+                        </Border>
+
+                        <!-- Profile Name and Title -->
+                        <VerticalStackLayout Grid.Column="1"
+                                             Spacing="4"
+                                             VerticalOptions="Center">
+                            <Label Text="John Doe"
+                                   FontSize="20"
+                                   FontAttributes="Bold"
+                                   TextColor="{StaticResource OnSurface}"
+                                   LineBreakMode="TailTruncation"/>
+                            <Label Text="Senior Operations Manager"
+                                   FontSize="13"
+                                   TextColor="{StaticResource OnSurfaceVariant}"/>
+                        </VerticalStackLayout>
+                    </Grid>
+
+                    <!-- Profile Status Badge -->
+                    <Border Grid.Row="1"
+                            StrokeShape="RoundRectangle 12"
+                            Background="{StaticResource SecondaryContainer}"
+                            Padding="12,6"
+                            HorizontalOptions="Start">
+                        <Label Text="Active Status"
+                               FontSize="11"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource OnSecondaryContainer}"/>
+                    </Border>
+                </Grid>
+            </Border>
+        </Grid>
+
+        <!-- Content Section with Profile Details -->
+        <ScrollView Grid.Row="1"
+                    Padding="0">
+            <VerticalStackLayout Spacing="16"
+                                 Padding="24">
+
+                <!-- Personal Information Section -->
+                <Border StrokeShape="RoundRectangle 12"
+                        Background="{StaticResource SurfaceLowest}"
+                        Padding="16"
+                        StrokeThickness="0">
+                    <VerticalStackLayout Spacing="12">
+                        <Label Text="Personal Information"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource OnSurface}"/>
+
+                        <!-- Email -->
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="Email"
+                                   FontSize="11"
+                                   TextColor="{StaticResource OnSurfaceVariant}"
+                                   FontAttributes="Bold"
+                                   CharacterSpacing="0.05"/>
+                            <Label Text="john.doe@company.com"
+                                   FontSize="13"
+                                   TextColor="{StaticResource OnSurface}"/>
+                        </VerticalStackLayout>
+
+                        <!-- Employee ID -->
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="Employee ID"
+                                   FontSize="11"
+                                   TextColor="{StaticResource OnSurfaceVariant}"
+                                   FontAttributes="Bold"
+                                   CharacterSpacing="0.05"/>
+                            <Label Text="EMP-045782"
+                                   FontSize="13"
+                                   TextColor="{StaticResource OnSurface}"/>
+                        </VerticalStackLayout>
+
+                        <!-- Department -->
+                        <VerticalStackLayout Spacing="4">
+                            <Label Text="Department"
+                                   FontSize="11"
+                                   TextColor="{StaticResource OnSurfaceVariant}"
+                                   FontAttributes="Bold"
+                                   CharacterSpacing="0.05"/>
+                            <Label Text="Operations &amp; Crew Management"
+                                   FontSize="13"
+                                   TextColor="{StaticResource OnSurface}"/>
+                        </VerticalStackLayout>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Performance Metrics Section -->
+                <Border StrokeShape="RoundRectangle 12"
+                        Background="{StaticResource SurfaceLowest}"
+                        Padding="16"
+                        StrokeThickness="0">
+                    <VerticalStackLayout Spacing="12">
+                        <Label Text="Performance Metrics"
+                               FontSize="16"
+                               FontAttributes="Bold"
+                               TextColor="{StaticResource OnSurface}"/>
+
+                        <Grid ColumnDefinitions="*,*"
+                              ColumnSpacing="12">
+                            <!-- Metric 1 -->
+                            <Border Grid.Column="0"
+                                    StrokeShape="RoundRectangle 8"
+                                    Background="{StaticResource SurfaceContainerLow}"
+                                    Padding="12">
+                                <VerticalStackLayout Spacing="4"
+                                                     HorizontalOptions="Center">
+                                    <Label Text="2847"
+                                           FontSize="24"
+                                           FontAttributes="Bold"
+                                           TextColor="{StaticResource PrimaryColor}"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="Flight Hours"
+                                           FontSize="11"
+                                           TextColor="{StaticResource OnSurfaceVariant}"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Border>
+
+                            <!-- Metric 2 -->
+                            <Border Grid.Column="1"
+                                    StrokeShape="RoundRectangle 8"
+                                    Background="{StaticResource SurfaceContainerLow}"
+                                    Padding="12">
+                                <VerticalStackLayout Spacing="4"
+                                                     HorizontalOptions="Center">
+                                    <Label Text="98%"
+                                           FontSize="24"
+                                           FontAttributes="Bold"
+                                           TextColor="{StaticResource PrimaryColor}"
+                                           HorizontalOptions="Center"/>
+                                    <Label Text="On-Time Ops"
+                                           FontSize="11"
+                                           TextColor="{StaticResource OnSurfaceVariant}"
+                                           HorizontalOptions="Center"/>
+                                </VerticalStackLayout>
+                            </Border>
+                        </Grid>
+                    </VerticalStackLayout>
+                </Border>
+
+                <!-- Action Buttons -->
+                <VerticalStackLayout Spacing="12">
+                    <Button Text="Edit Profile"
+                            Background="{StaticResource PrimaryColor}"
+                            TextColor="#effbff"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            Padding="12"
+                            CornerRadius="12"
+                            HeightRequest="44"/>
+
+                    <Button Text="View Documents"
+                            Background="{StaticResource SecondaryContainer}"
+                            TextColor="{StaticResource OnSecondaryContainer}"
+                            FontSize="14"
+                            FontAttributes="Bold"
+                            Padding="12"
+                            CornerRadius="12"
+                            HeightRequest="44"/>
+                </VerticalStackLayout>
+
+                <BoxView HeightRequest="24"/>
+            </VerticalStackLayout>
+        </ScrollView>
+    </Grid>
+</ContentPage>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pages="clr-namespace:MauiApp1.Pages"
+             xmlns:contact="clr-namespace:MauiApp1.Model"
+             x:Class="MauiApp1.Pages.ContactPage"
+             x:DataType="pages:ContactPage"
+             Title="Contact Us Page">
+
+        <ContentPage.Resources>
+                <ResourceDictionary>
+                        <Style x:Key="ContactButton"
+                                        TargetType="Button">
+                                <Setter Property="FontSize"
+                                                Value="16"/>
+                                <Setter Property="Margin"
+                                                Value="0,4"/>
+                                <Setter Property="TextColor"
+                                                Value="{StaticResource White}"/>
+                                <Setter Property="BorderColor"
+                                                Value="#2e7eff"/>
+                                <Setter Property="Background"
+                                                Value="#2e7eff"/>
+                                <Setter Property="HeightRequest"
+                                                Value="40"/>
+                                <Setter Property="CornerRadius"
+                                                Value="10"/>
+                        </Style>
+
+                        <Style TargetType="Label">
+                                <Setter Property="FontFamily"
+                                                Value="OpenSans"/>
+                        </Style>
+                </ResourceDictionary>
+        </ContentPage.Resources>
+
+        <Grid RowDefinitions="Auto,*,Auto,Auto,Auto"
+              RowSpacing="8"
+              Padding="12">
+
+                <!-- <Label Grid.Row="0" -->
+                <!--        Text="Welcome to .NET Maui" -->
+                <!--        HorizontalOptions="Center" /> -->
+
+                <SearchBar Grid.Row="0"
+                           Grid.Column="0"
+                           Background="White"
+                           TextChanged="InputView_OnTextChanged"
+                           SearchButtonPressed="SearchBar_OnSearchButtonPressed"
+                           Placeholder="Search contact"></SearchBar>
+
+                <CollectionView Grid.Row="1"
+                                x:Name="ContactsCollectionView"
+                                SelectionMode="Single"
+                                ItemsSource="{Binding Source={RelativeSource AncestorType={x:Type pages:ContactPage}}, Path=Items}"
+                                SelectionChanged="SelectableItemsView_OnSelectionChanged">
+
+                        <CollectionView.ItemTemplate>
+                                <DataTemplate x:DataType="contact:Contact">
+                                        <HorizontalStackLayout>
+                                                <CheckBox CheckedChanged="ContactCheckBox_OnCheckedChanged"/>
+                                                <VerticalStackLayout Padding="10"
+                                                                     Spacing="4">
+                                                        <Label Text="{Binding Name}"
+                                                               FontSize="16"
+                                                               FontAttributes="Bold"/>
+                                                        <Label Text="{Binding Phone}"
+                                                               TextColor="Gray"/>
+                                                </VerticalStackLayout>
+                                        </HorizontalStackLayout>
+                                </DataTemplate>
+                        </CollectionView.ItemTemplate>
+                </CollectionView>
+
+                <Button Grid.Row="2"
+                        x:Name="btnDeleteContact"
+                        Clicked="BtnDeleteContact_OnClicked"
+                        Style="{StaticResource ContactButton}"
+                        Text="Delete Selected"
+                        IsEnabled="False"/>
+
+                <Button Grid.Row="3"
+                        x:Name="btnEditContact"
+                        Clicked="BtnEditContact_OnClicked"
+                        Style="{StaticResource ContactButton}"
+                        Text="Edit Contact"/>
+
+                <Button Grid.Row="4"
+                        x:Name="btnAddContact"
+                        Clicked="BtnAddContact_OnClicked"
+                        Style="{StaticResource ButtonOutline}"
+                        Text="Add Contact"/>
+        </Grid>
+</ContentPage>

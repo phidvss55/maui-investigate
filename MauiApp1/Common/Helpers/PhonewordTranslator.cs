@@ -1,7 +1,7 @@
 using System;
 using System.Text;
 
-namespace MauiApp1;
+namespace MauiApp1.Common.Helpers;
 
 public static class PhonewordTranslator
 {

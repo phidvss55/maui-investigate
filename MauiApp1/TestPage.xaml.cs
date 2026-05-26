@@ -1,3 +1,5 @@
+using MauiApp1.Common.Helpers;
+
 namespace MauiApp1;
 
 public partial class TestPage : ContentPage

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+             x:Class="MauiApp1.Pages.EditContactPage"
+             xmlns:control="clr-namespace:MauiApp1.Pages"
+             Title="Edit Contact Page">
+
+
+    <ContentPage.Content>
+        <control:ContactControl
+            x:Name="contactCtl"
+            OnSave="OnSaveButtonClicked"
+            OnCancel="OnBackButtonClicked"
+            OnError="ContactCtl_OnOnError"></control:ContactControl>
+
+        <!-- <VerticalStackLayout> -->
+        <!--     <Label Text="Edit Contact page" x:Name="lblName"></Label> -->
+        <!-- -->
+        <!--     <Button Text="Back to Contact List" -->
+        <!--             Clicked="OnBackButtonClicked"  -->
+        <!--             Style="{StaticResource ButtonOutline}"> -->
+        <!--     </Button> -->
+        <!-- </VerticalStackLayout> -->
+
+        <!-- <VerticalStackLayout Spacing="10" Margin="20, 20, 20, 0"> -->
+        <!--     <Border Padding="10, 2, 10, 8"  -->
+        <!--             Stroke="Gray"  -->
+        <!--             StrokeThickness="1"  -->
+        <!--             StrokeShape="RoundRectangle 10,10,10,10" > -->
+        <!--         <VerticalStackLayout > -->
+        <!--             <Label Text="Name" HorizontalOptions="Start" WidthRequest="60"></Label> -->
+        <!--             <Entry x:Name="entryName" VerticalOptions="Center"> -->
+        <!--                 <Entry.Behaviors> -->
+        <!--                     <toolkit:TextValidationBehavior  -->
+        <!--                         x:Name="nameValidator" -->
+        <!--                         MinimumLength="3" -->
+        <!--                         Flags="ValidateOnAttaching,ValidateOnValueChanged" -->
+        <!--                         InvalidStyle="{StaticResource InvalidEntryStyle}" -->
+        <!--                     /> -->
+        <!--                 </Entry.Behaviors> -->
+        <!--             </Entry> -->
+        <!--         </VerticalStackLayout> -->
+        <!--     </Border> -->
+        <!-- -->
+        <!--     <Border Padding="4, 8, 4, 8" > -->
+        <!--         <VerticalStackLayout> -->
+        <!--             <Label Text="Email" HorizontalOptions="Start" WidthRequest="60"></Label> -->
+        <!--             <Entry x:Name="entryEmail" VerticalOptions="Center"> -->
+        <!--                 <Entry.Behaviors> -->
+        <!--                     <toolkit:MultiValidationBehavior -->
+        <!--                         x:Name="emailValidator" -->
+        <!--                         Flags="ValidateOnAttaching,ValidateOnValueChanged"> -->
+        <!--                         <toolkit:TextValidationBehavior -->
+        <!--                             Flags="ValidateOnAttaching,ValidateOnValueChanged" -->
+        <!--                             MinimumLength="1" -->
+        <!--                             toolkit:MultiValidationBehavior.Error="Email is Required" /> -->
+        <!-- -->
+        <!--                         <toolkit:EmailValidationBehavior -->
+        <!--                             Flags="ValidateOnAttaching,ValidateOnValueChanged"  -->
+        <!--                             toolkit:MultiValidationBehavior.Error="Email is Required" /> -->
+        <!--                     </toolkit:MultiValidationBehavior> -->
+        <!--                 </Entry.Behaviors> -->
+        <!--             </Entry> -->
+        <!--         </VerticalStackLayout> -->
+        <!--     </Border> -->
+        <!-- -->
+        <!--     <Border Padding="10, 2, 10, 2"> -->
+        <!--         <VerticalStackLayout> -->
+        <!--             <Label Text="Phone" HorizontalOptions="Start" WidthRequest="60"></Label> -->
+        <!--             <Entry x:Name="entryPhone" VerticalOptions="Center"></Entry> -->
+        <!--         </VerticalStackLayout> -->
+        <!--     </Border> -->
+        <!--      -->
+        <!--     <Button Text="Update Contact" Clicked="OnSaveButtonClicked"></Button> -->
+        <!--     <Button Text="Cancel" Clicked="OnBackButtonClicked"></Button> -->
+        <!--      -->
+        <!-- </VerticalStackLayout> -->
+
+    </ContentPage.Content>
+</ContentPage>

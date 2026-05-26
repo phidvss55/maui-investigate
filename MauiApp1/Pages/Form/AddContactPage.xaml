@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp1.Pages.AddContactPage"
+             xmlns:control="clr-namespace:MauiApp1.Pages"
+             Title="Add Contact Page">
+        
+    <ContentPage.Content>
+        <control:ContactControl 
+            x:Name="contactCtl"
+            OnSave="OnSaveButtonClicked"
+            OnCancel="OnBackButtonClicked"
+            OnError="ContactCtl_OnOnError"></control:ContactControl>
+    </ContentPage.Content>
+    
+    
+    
+</ContentPage>

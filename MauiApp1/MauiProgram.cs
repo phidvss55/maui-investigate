@@ -2,6 +2,7 @@
 using MauiApp1.ViewModel;
 using Microsoft.Extensions.Logging;
 using CommunityToolkit.Maui;
+using MauiApp1.Pages.Pizza;
 
 namespace MauiApp1;
 
@@ -38,6 +39,19 @@ public static class MauiProgram
 		builder.Logging.AddDebug();
 #endif
 
+		AddPizzaService(builder.Services);
+		
 		return builder.Build();
+	}
+
+	public static IServiceCollection AddPizzaService(IServiceCollection services)
+	{
+		services.AddSingleton<PizzaService>();
+		services.AddSingletonWithShellRoute<HomePage, PizzaHomeViewModel>(nameof(HomePage));
+		services.AddTransientWithShellRoute<AllPizzaPage, AllPizzaViewModel>(nameof(AllPizzaPage));
+		services.AddTransientWithShellRoute<DetailPage, DetailPizzaViewModel>(nameof(DetailPage));
+		services.AddTransientWithShellRoute<CartPage, CartViewModel>(nameof(CartPage));
+		
+		return services;
 	}
 }

@@ -4,8 +4,14 @@
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:MauiApp1"
-    xmlns:contact="clr-namespace:MauiApp1.Pages"
-    Shell.FlyoutBehavior="Flyout">
+    xmlns:pages="clr-namespace:MauiApp1.Pages"
+    xmlns:toolkit="http://schemas.microsoft.com/dotnet/2022/maui/toolkit"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.BackgroundColor="DarkGoldenrod">
+    <Shell.Behaviors>
+        <toolkit:StatusBarBehavior StatusBarColor="DarkGoldenrod"
+                                   StatusBarStyle="LightContent" />
+    </Shell.Behaviors>
 
     <!-- <TabBar> -->
         <ShellContent
@@ -14,13 +20,18 @@
             Route="MainPage"/>
 
         <ShellContent
+            Title="Pizza Dasboard"
+            ContentTemplate="{DataTemplate pages:PizzaDashboard}"
+            Route="PizzaDashboard"/>
+        
+        <ShellContent
             Title="Todo"
             ContentTemplate="{DataTemplate local:FirstPage}"
             Route="FirstPage"/>
     
         <ShellContent
             Title="Contact Page"
-            ContentTemplate="{DataTemplate contact:ContactPage}"
+            ContentTemplate="{DataTemplate pages:ContactPage}"
             Route="ContactPage"/>
 
         <ShellContent
